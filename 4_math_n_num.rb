@@ -11,7 +11,7 @@ puts("My code is #{sum}")  #Here it prints , no need to typecast the number to s
 puts negative.abs();#absolute value
 puts ("Ceiling value #{ceilFloat.ceil()}")
 puts ("Floor value #{floorFloat.floor()}")
-puts ("Round value #{ceilFloat.round()}")6
+puts ("Round value #{ceilFloat.round()}")
 
 
 
