@@ -2,7 +2,7 @@
 
 Welcome to the "Learning Ruby Basics" repository! This repository is designed to help you grasp the fundamentals of the Ruby programming language. Let's dive into the concepts covered so far.
 
-## Introduction to Ruby [Link to File](1_Introduction\First_Program.rb)
+## Introduction to Ruby [1_Introduction/First_Program.rb](1_Introduction/First_Program.rb)
 
 In this chapter, we begin by introducing the basics of Ruby programming. Let's start with printing a message using the `print` and `puts` methods.
 
