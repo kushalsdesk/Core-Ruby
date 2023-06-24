@@ -486,8 +486,7 @@ Happy gaming!
 
 ## Conclusion
 
-Congratulations on completing the introduction chapter of learning Ruby basics! You have learned how to print messages and draw simple shapes in Ruby. This is just the beginning of your journey. Stay tuned for more exciting concepts and challenges!
-
-Feel free to explore the repository further and experiment with the provided code examples.
+This Repo should contain the very fundamental knowledge of Ruby Programs...
+Now The next focus should be Ruby on Rails to run Ruby in Web Development
 
 Happy coding!
