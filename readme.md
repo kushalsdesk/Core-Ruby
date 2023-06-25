@@ -187,6 +187,9 @@ puts cube(4)[2]
 
 The code snippet above demonstrates the usage of methods in Ruby. It defines several methods, including sayHi, sayHello, sayHelloCustom, and cube. These methods illustrate different concepts such as function declaration, passing parameters, default parameter values, and return statements.
 
+# Control Statements in Ruby
+
+
 ## Case Expression [3_Control/Case_expression.rb](3_Control/Case_expression.rb)
 
 ```ruby
@@ -218,6 +221,8 @@ puts get_day_name("thu")
 
 The code snippet above demonstrates the usage of a case expression in Ruby. The method get_day_name takes a parameter day and uses a case statement to determine the corresponding day name based on the given input. The method then returns the day name.
 
+
+
 ## If-Else [3_Control/If_statement.rb](3_Control/If_statement.rb)
 
 ```ruby
@@ -241,6 +246,8 @@ end
 ```
 
 The code snippet above demonstrates the use of if statements in Ruby. It checks the values of the isMale and isTall variables and executes different code blocks based on the conditions.
+
+# Data-Structures in Ruby
 
 ## Array [4_Data_Structures/Array.rb](4_Data_Structures/Array.rb)
 
@@ -282,7 +289,179 @@ puts "The flattened array: #{array}"
 puts "#{array.include?(3)}"
 ```
 
-The code snippet above demonstrates the usage of arrays in Ruby. It creates arrays, adds elements, performs sorting and modification, creates a nested array, flattens the array, and checks for the existence of an element.
+1. **Creating and Accessing an Array:**
+   - An array named `games` is created with three elements: "Forza", "NFS", and 100.
+   - The contents of the `games` array are printed.
+   - The first element of the `games` array is accessed using index 0 and printed.
+
+2. **Adding Elements to an Array:**
+   - An empty array named `nums` is created using the `Array.new` constructor.
+   - Elements (7, 6, 8, 5, 2, 3, 4) are added to the `nums` array using the `push` method.
+   - The contents of the `nums` array and its length are printed.
+
+3. **Sorting and Modifying Arrays:**
+   - The `nums` array is sorted using the `sort` method and stored in a new array named `nums2`.
+   - The last element is removed from the `nums2` array using the `pop` method.
+   - The modified `nums2` array is printed.
+
+4. **Creating a Nested Array:**
+   - A nested array named `array` is created with `nums2.reverse()` as its first element.
+   - Additional elements, including another reversed `nums` array and two integers (11, 14), are added to the `array`.
+
+5. **Flattening an Array:**
+   - The `array` is flattened using the `flatten!` method, which modifies the array in-place.
+   - The flattened `array` is printed.
+
+6. **Checking for Element Existence:**
+   - The `include?` method is used to check if the value 3 exists in the `array`.
+   - The result of the check is printed.
+
+These operations showcase common array manipulations, such as creating and accessing arrays, adding elements, sorting, modifying arrays, creating nested arrays, flattening arrays, and checking for element existence.
+
+Let me know if there's anything else I can assist you with!
+
+
+## Hash [4_Data_Structures/Hash.rb](4_Data_Structures/Hash.rb)
+```ruby
+=begin
+    Hashes let us store data in a key-value pair 
+    Though everyhting in Ruby is an object
+    We have multiple syntaxes to set the key 
+=end
+
+my_hash = Hash.new
+
+my_hash = {
+    1 => "Random",
+    :game => "AC",
+    "desktop" => "Environment",
+    key: "value"
+
+}
+
+puts my_hash
+
+my_hashToArray = my_hash.to_a  # this would convert a string to n array
+
+puts "my_hashToArray"
+my_hashToArray.each do |ele|
+    puts "The Array element is: #{ele}"
+end
+puts "myhashToArray end "
+
+my_hashToArray.each do |key,value|
+    puts " Key: #{key}, \n Value: #{value}"
+end
+
+
+
+=begin 
+    it was generally recommended to use 
+    the "hash rocket" (=>) syntax for creating hashes.
+    But after 1.9 things start look like JS Object or Python Dictionary
+    though everything in Ruby is Object but as this hash has other functionalities , I would still practice that hash rocket to respect the community and to read old docs and codebases
+=end
+
+
+# Symbols
+
+=begin 
+    We can certainly use strings as Ruby hash keys; as we’ve seen, there’s always more than one way to do something in Ruby. However, the Rubyist’s approach would be to use symbols.
+=end
+
+my_first_symbol = :first # this is a symbol , and its immutable
+
+# This converts a string to symbol and vice-versa
+
+:sasquatch.to_s
+# ==> "sasquatch"
+ 
+"sasquatch".to_sym
+# ==> :sasquatch
+
+# or
+
+"hello".intern 
+# ==> :hello
+
+strings = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
+
+
+symbols = Array.new
+
+strings.each do |ele| 
+  symbols.push(ele.intern)
+end
+
+symbols.each do |ele|
+  puts ele
+end
+
+
+# Becoming more selective by passing some conditions to filter the hash result
+
+movie_ratings = {
+    memento: 3,
+    primer: 3.5,
+    the_matrix: 5,
+    truman_show: 4,
+    red_dawn: 1.5,
+    skyfall: 4,
+    alex_cross: 2,
+    uhf: 1,
+    lion_king: 3.5
+  }
+  # Add your code below!
+  
+  good_movies = movie_ratings.select { |name, rating | rating > 3}
+  
+ puts good_movies.select { |k,v| 
+    k == :skyfall
+}
+
+
+# Just working with eiher key or value
+my_hash = { one: 1, two: 2, three: 3 }
+ 
+# working with keys
+my_hash.each_key { |k| print k, " " }
+# working with values
+my_hash.each_value { |v| print v, " " }
+
+
+```
+
+1. **Hashes:**
+   - Hashes in Ruby allow storing data in key-value pairs.
+   - An empty hash named `my_hash` is initialized using `Hash.new`.
+   - Key-value pairs are added to the `my_hash` using different syntaxes, including integers, symbols, and strings as keys, and any Ruby objects as values.
+   - The resulting hash is printed using `puts`.
+
+2. **Converting Hash to Array:**
+   - The `my_hash` is converted to an array using the `to_a` method.
+   - The resulting array is stored in the variable `my_hashToArray`.
+   - The array elements are printed using the `each` iteration.
+
+3. **Symbols:**
+   - Symbols in Ruby are immutable identifiers represented by a leading colon (`:symbol_name`).
+   - The code demonstrates different ways to convert between symbols and strings.
+   - An array of symbols is created by iterating over an array of strings and converting each element to a symbol using methods like `to_sym` or `intern`.
+
+4. **Filtering Hash:**
+   - The `movie_ratings` hash contains movie names as symbols and their corresponding ratings.
+   - The `select` method is used on `movie_ratings` to filter movies with ratings greater than 3, creating a new hash called `good_movies`.
+   - The `good_movies` hash is further filtered to select the movie with the key `:skyfall`, which is printed using `puts`.
+
+5. **Working with Keys and Values:**
+   - The `my_hash` contains key-value pairs.
+   - The `each_key` method is used to iterate over the keys and print them.
+   - Similarly, the `each_value` method is used to iterate over the values and print them.
+
+These operations demonstrate the usage of hashes, converting between symbols and strings, filtering hashes based on specific conditions, and iterating over keys and values in a hash.
+
+Let me know if there's anything else I can assist you with!
+
+
 
 # Looping in Ruby
 
@@ -332,7 +511,7 @@ end
 
 ```
 
-### Looping through an array
+### Looping through a hash
 
 ```ruby
 myHash = {
