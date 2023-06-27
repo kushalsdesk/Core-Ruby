@@ -318,9 +318,6 @@ puts "#{array.include?(3)}"
 
 These operations showcase common array manipulations, such as creating and accessing arrays, adding elements, sorting, modifying arrays, creating nested arrays, flattening arrays, and checking for element existence.
 
-Let me know if there's anything else I can assist you with!
-
-
 ## Hash [4_Data_Structures/Hash.rb](4_Data_Structures/Hash.rb)
 ```ruby
 =begin
