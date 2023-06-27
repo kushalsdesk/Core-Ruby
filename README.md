@@ -10,13 +10,13 @@ Welcome to the "Learning Ruby Basics" repository! This repository is designed to
 
 - **Package Managers**: Some operating systems have package managers that simplify the installation process. For example, on Ubuntu or Debian-based systems, you can use `apt-get`:
 
-```bash
+```console
   sudo apt-get install ruby-full
 ```
 
 - **Ruby Version Manager (RVM)**: RVM allows you to manage multiple Ruby versions on your system. It's useful if you need to switch between different Ruby versions easily. To install RVM, you can use the following command:
 
-```bash
+```console
   \curl -sSL https://get.rvm.io | bash -s stable
 ```
 
@@ -26,7 +26,7 @@ Welcome to the "Learning Ruby Basics" repository! This repository is designed to
 
 **Verify the Installation**: Once the installation is complete, open a terminal or command prompt and run the following command to verify that Ruby is installed correctly:
 
-```bash
+```console
   ruby --version
 ```
 
@@ -62,7 +62,7 @@ puts
 
 Output:
 
-```
+```ruby
 
 ```
 
@@ -761,6 +761,151 @@ The code allows users to interact with the game library system, add new games, u
 This system provides a basic implementation for managing a game library collection. You can further customize and enhance it based on your specific needs and requirements.
 
 Happy gaming!
+
+# Object-Oriented Programming
+
+As Ruby is a Object-oriented programming language, here we will see some of the features of that in Ruby
+
+## Code [7_OOPS/Class.rb](7_OOPS/Class.rb)
+
+```ruby
+# naming convention: Should start with a capital letter
+
+class Book
+  attr_accessor :title, :author, :pages
+end
+=begin
+# creating objects with a default constructor
+a constructor is a method for creating instances
+=end
+
+book1 = Book.new()
+
+book1.title = "Harry Potter"
+book1.author = "J.K. Rowling"
+book1.pages = 400
+
+book2 = Book.new()
+
+book2.title = "Sherlock holmes"
+book2.author = "Arthur Conan Doyle"
+book2.pages = 400
+
+# its not a good option to create instances with a default constructor
+
+class ModernBook
+  attr_accessor :title, :author, :pages
+
+# parameterized constructor
+  def initialize(title, author, pages)
+    @title = title,
+    @author = author,
+    @pages = pages
+  end
+
+end
+
+book3 = ModernBook.new("The Great Gatsby", "F. Scott Fitzgerald", 218)
+
+# to see object values
+puts book1.inspect
+puts book2.inspect
+puts book3.inspect
+
+=begin
+Check out the below code in the editor. See how some variables start with $, @, or @@? This helps mark them as global, instance, and class variables (respectively). We’ll explain these in the next section. Run the code to see how these different variables work!
+=end
+
+class Computer
+$manufacturer = "Mango Computer, Inc."
+@@files = {hello: "Hello, world!"}
+
+  def initialize(username, password)
+    @username = username
+    @password = password
+  end
+
+  def current_user
+    @username
+  end
+
+  def self.display_files
+    @@files
+  end
+end
+
+# Make a new Computer instance:
+hal = Computer.new("Dave", 12345)
+
+puts "Current user: #{hal.current_user}"
+# @username belongs to the hal instance.
+
+puts "Manufacturer: #{$manufacturer}"
+# $manufacturer is global! We can get it directly.
+
+puts "Files: #{Computer.display_files}"
+# @@files belongs to the Computer class.
+
+
+## Inheritance
+
+class ApplicationError
+  def display_error
+    puts "Error! Error!"
+  end
+end
+
+class SuperBadError < ApplicationError
+end
+
+err = SuperBadError.new
+err.display_error
+
+
+## Method overriding after Inheritance
+class Creature
+  def initialize(name)
+    @name = name
+  end
+
+  def fight
+    return "Punch to the chops!"
+  end
+end
+
+
+class Dragon < Creature
+  def fight
+    return "Breathes fire!"
+  end
+end
+
+## use of "super" keyword
+
+class LandDragon < Creature
+  def fight
+    puts  "Instead of breathing fire!"
+    super
+  end
+end
+
+```
+
+## Code Explanation
+
+1. **Classes and Naming Convention**: In Ruby, classes are defined using the `class` keyword. It is a best practice to name classes starting with a capital letter.
+
+2. **Creating Objects with a Default Constructor**: In Ruby, objects can be created using the `new` method of a class. This creates an instance of the class with default values for its attributes.
+
+3. **Constructor and Parameterized Constructor**: Ruby classes can have an `initialize` method, which acts as a constructor. It is called when an object is created using the `new` method. A parameterized constructor accepts arguments to initialize the object's attributes with specific values.
+
+4. **Object Value Inspection**: The `inspect` method in Ruby provides a string representation of an object's internal state, including its attributes and their current values. It is commonly used to inspect and display object values.
+
+5. **Global Variables, Instance Variables, and Class Variables**: Ruby supports global variables (prefixed with `$`), instance variables (prefixed with `@`), and class variables (prefixed with `@@`). Global variables can be accessed from anywhere in the program, while instance variables are specific to an instance of a class, and class variables are shared among all instances of a class.
+
+6. **Inheritance**: Inheritance allows a class to inherit attributes and methods from another class. In Ruby, inheritance is denoted by using the `<` symbol to indicate the subclass inheriting from the superclass.
+
+7. **Method Overriding and `super` Keyword**: Method overriding occurs when a subclass provides its own implementation of a method that is already defined in the superclass. The `super` keyword is used to invoke the overridden method from the superclass.
 
 ## Conclusion
 
