@@ -907,6 +907,59 @@ end
 
 7. **Method Overriding and `super` Keyword**: Method overriding occurs when a subclass provides its own implementation of a method that is already defined in the superclass. The `super` keyword is used to invoke the overridden method from the superclass.
 
+## Code [7_OOPS/Virtual_machine.rb](7_OOPS/Virtual_machine.rb)
+
+```ruby
+class Machine
+  @@users = {}
+
+  def initialize(username, password)
+    @username = username
+    @password = password
+    @@users[username] = password
+    @files = {}
+  end
+
+  def create(filename)
+    time = Time.now
+    @files[filename] = time
+    puts "#{filename} was created by #{@username} at #{time}."
+  end
+
+  def Machine.get_users
+    @@users
+  end
+end
+
+my_machine = Machine.new("eric", 01234)
+your_machine = Machine.new("you", 56789)
+
+my_machine.create("groceries.txt")
+your_machine.create("todo.txt")
+
+puts "Users: #{Machine.get_users}"
+```
+
+## Code Explanation:
+
+1. **Class Definition**: The code defines a class named `Machine` using the `class` keyword.
+
+2. **Class Variables**: The class has a class variable `@@users` defined as an empty hash (`{}`). Class variables are shared among all instances of the class.
+
+3. **Constructor (initialize)**: The class has an `initialize` method that is called when an instance of the `Machine` class is created. It takes two parameters, `username` and `password`. Inside the constructor, the `username` and `password` are assigned to instance variables `@username` and `@password` respectively. Additionally, the `username` and `password` are stored in the `@@users` hash, with `username` as the key and `password` as the value. An empty hash `@files` is also initialized as an instance variable.
+
+4. **Instance Method (create)**: The class has an instance method named `create`. This method takes a `filename` parameter. Inside the method, the current time is obtained using `Time.now` and stored in a local variable `time`. The `filename` and corresponding `time` are then added to the `@files` hash, with `filename` as the key and `time` as the value. Finally, a message is printed to the console indicating the filename, the username of the machine, and the time of creation.
+
+5. **Class Method (get_users)**: The class has a class method named `get_users`. This method returns the `@@users` hash, allowing access to the usernames and passwords of all users.
+
+6. **Creating Instances**: Two instances of the `Machine` class are created. One with `username` as "eric" and `password` as 01234, and the other with `username` as "you" and `password` as 56789.
+
+7. **Method Invocation**: The `create` method is called on each instance (`my_machine` and `your_machine`) with different filenames as arguments.
+
+8. **Output**: The usernames and passwords stored in the `@@users` hash are displayed on the console using string interpolation and the `puts` method.
+
+In summary, the code demonstrates the creation of instances of the `Machine` class, storing usernames and passwords in a class variable, and creating files associated with each instance. It also shows how to access the class variable using a class method.
+
 ## Conclusion
 
 This Repo should contain the very fundamental knowledge of Ruby Programs...
