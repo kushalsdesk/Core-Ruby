@@ -4,6 +4,34 @@
 
 Welcome to the "Learning Ruby Basics" repository! This repository is designed to help you grasp the fundamentals of the Ruby programming language. Let's dive into the concepts covered so far.
 
+# Installation
+
+1 .Choose an Installation Method: There are multiple **ways to install Ruby**:
+
+- **Package Managers**: Some operating systems have package managers that simplify the installation process. For example, on Ubuntu or Debian-based systems, you can use `apt-get`:
+
+```bash
+  sudo apt-get install ruby-full
+```
+
+- **Ruby Version Manager (RVM)**: RVM allows you to manage multiple Ruby versions on your system. It's useful if you need to switch between different Ruby versions easily. To install RVM, you can use the following command:
+
+```bash
+  \curl -sSL https://get.rvm.io | bash -s stable
+```
+
+- **RubyInstaller (Windows)**: If you're using Windows, RubyInstaller provides an executable installer that simplifies the installation process. You can download the installer from the [RubyInstaller.](https://rubyinstaller.org/)
+
+- **rbenv (macOS and Linux)**: rbenv is another popular Ruby version manager that allows you to install and manage different Ruby versions. You can install rbenv using a package manager like Homebrew (macOS) or a Git clone (Linux).
+
+**Verify the Installation**: Once the installation is complete, open a terminal or command prompt and run the following command to verify that Ruby is installed correctly:
+
+```bash
+  ruby --version
+```
+
+This command should display the version of Ruby you installed, indicating that the installation was successful.
+
 ## Introduction to Ruby
 
 ### First Program [1_Introduction/First_Program.rb](1_Introduction/First_Program.rb)
