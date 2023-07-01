@@ -182,7 +182,7 @@ flows = nil  # null (absence of value)
 
 The code snippet above demonstrates the usage of variables in Ruby. It assigns values to different variables representing a character's name, age, GPA, gender, and a null value. The `puts` statement displays a greeting message using the assigned variables.
 
-## Methods [2_Blocks/Methods.rb](2_Blocks/Methods.rb)
+## Methods [2_Blocks,Procs,Lambdas/Methods.rb](2_Blocks,Procs,Lambdas/Methods.rb)
 
 ```ruby
 def sayHi
@@ -212,9 +212,17 @@ puts cube(4)[2]
 
 ```
 
-The code snippet above demonstrates the usage of methods in Ruby. It defines several methods, including sayHi, sayHello, sayHelloCustom, and cube. These methods illustrate different concepts such as function declaration, passing parameters, default parameter values, and return statements.
+1. **`sayHi` Method**: This method is defined without any parameters. It simply prints the string "Hi! to All" to the console.
 
-## Blocks,Procs,Lambdas [2_Blocks/B_P_L.rb](2_Blocks/B_P_L.rb)
+2. **`sayHello` Method**: This method takes one parameter `name` and prints a greeting message with the provided name. It uses string interpolation to include the value of `name` in the output.
+
+3. **`sayHelloCustom` Method**: This method demonstrates the use of default parameter values. It takes two parameters, `name` and `age`, with default values of "Noone" and 0 respectively. If no arguments are provided when calling this method, it will use the default values. It prints a message that includes the provided `name` and `age` values using string interpolation.
+
+4. **`cube` Method**: This method takes one parameter `num` and calculates the cube of the given number. It uses the `return` keyword to return multiple values: the cube of `num`, the number 70, and the number 90. When calling this method, you can capture and use the returned values.
+
+5. The `puts` statements demonstrate the usage of the methods. They call the methods with different arguments and display the returned values or execute the method's code.
+
+## Blocks,Procs,Lambdas [2_Blocks,Procs,Lambdas/B_P_L.rb](2_Blocks,Procs,Lambdas/B_P_L.rb)
 
 ```ruby
 new_line = "____________________________\n"
@@ -304,17 +312,17 @@ ampersand_demo { puts "I'm the block" } # Output: I'm the block
 
 ```
 
-**Blocks:** This section demonstrates the use of blocks in Ruby. A block is a piece of code that can be executed one or more times. It is defined within curly braces or do...end keywords and can be passed to methods for execution.
+1. **Blocks:** This section demonstrates the use of blocks in Ruby. A block is a piece of code that can be executed one or more times. It is defined within curly braces or do...end keywords and can be passed to methods for execution.
 
-**Procs:** Procs are saved blocks that can be reused. They are objects that can be assigned to variables and called later. Procs can take parameters and execute a series of statements when invoked.
+2. **Procs:** Procs are saved blocks that can be reused. They are objects that can be assigned to variables and called later. Procs can take parameters and execute a series of statements when invoked.
 
-**Lambdas:** Lambdas are similar to procs, but with some slight differences in behavior. Like procs, they are saved blocks that can be reused. Lambdas are objects that can be assigned to variables and called later. They can also take parameters and execute a series of statements.
+3. **Lambdas:** Lambdas are similar to procs, but with some slight differences in behavior. Like procs, they are saved blocks that can be reused. Lambdas are objects that can be assigned to variables and called later. They can also take parameters and execute a series of statements.
 
-**Arrow Functions:** Arrow functions are a shorthand notation for creating lambdas in Ruby. Instead of using the lambda keyword, an arrow (->) followed by parameters and a block of code is used to define a lambda.
+4. **Arrow Functions:** Arrow functions are a shorthand notation for creating lambdas in Ruby. Instead of using the lambda keyword, an arrow (->) followed by parameters and a block of code is used to define a lambda.
 
-**Collect Method:** The collect method is used to create a new array based on the elements of an existing array. It iterates over the elements, applies a transformation defined in a block, and returns a new array with the transformed elements.
+5. **Collect Method:** The collect method is used to create a new array based on the elements of an existing array. It iterates over the elements, applies a transformation defined in a block, and returns a new array with the transformed elements.
 
-**Ampersand Notation:** The ampersand (&) notation is used to convert a block into a proc object. It allows passing blocks as arguments to methods that expect a proc or lambda parameter.
+6. **Ampersand Notation:** The ampersand (&) notation is used to convert a block into a proc object. It allows passing blocks as arguments to methods that expect a proc or lambda parameter.
 
 ## Case Expression [3_Control/Case_expression.rb](3_Control/Case_expression.rb)
 
