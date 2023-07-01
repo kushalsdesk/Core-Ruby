@@ -214,6 +214,108 @@ puts cube(4)[2]
 
 The code snippet above demonstrates the usage of methods in Ruby. It defines several methods, including sayHi, sayHello, sayHelloCustom, and cube. These methods illustrate different concepts such as function declaration, passing parameters, default parameter values, and return statements.
 
+## Blocks,Procs,Lambdas [2_Blocks/B_P_L.rb](2_Blocks/B_P_L.rb)
+
+```ruby
+new_line = "____________________________\n"
+
+# Blocks
+puts "Blocks"
+
+my_numbers = [1, 2, 3, 4, 5]
+
+my_numbers.each {
+  |number|
+  puts "Printing the number: #{number}"
+}
+
+puts new_line
+
+def yield_me_bb
+  puts "I'm the method"
+  yield # Rails application.html.erb files use this
+  puts "I'm the method again"
+end
+
+yield_me_bb { puts "I'm the interrupting cow" }
+
+# Procs
+puts new_line
+puts "Procs"
+
+proc_me = Proc.new { puts "I'm a proc" }
+proc_me.call
+
+proc_me_twice = Proc.new { |a, b| puts "a + b = " + (a + b).to_s }
+
+proc_me_twice.call(2, 3)
+puts new_line
+
+def proc_me_like_a_hurricane
+  proc_demo = Proc.new { return "I'm a hurricane" }
+  # proc_demo = Proc.new { puts "I'm a hurricane" }
+  proc_demo.call # This is kinda just a return statement right here.
+  return "I'm a gentle breeze"
+end
+
+puts proc_me_like_a_hurricane
+
+# Lambdas
+puts new_line
+puts "Lambdas"
+
+lambdas_bread = lambda { puts "I'm a lambda" }
+lambdas_bread.call # Output: I'm a lambda
+
+def i_wont_be_back
+  lambda_demo = lambda { return "Only I print!" }
+  lambda_demo.call
+  "I lied, I'm back." # Reached
+end
+
+puts i_wont_be_back # Output: I'll be back.
+
+# Arrow functions
+puts new_line
+puts "Arrow Functions"
+
+lambda_demo = -> { puts "I'm a lambda" }
+lambda_demo.call # Output: I'm a lambda
+
+lambda_demo2 = ->(a, b) { puts "a + b = " + (a + b).to_s }
+lambda_demo2.call(2, 3) # Output: a + b = 5
+
+# Collect Method
+puts new_line
+puts "Collect Method, x * 2"
+
+numbers = [1, 2, 3, 4, 5]
+puts numbers.collect { |number| "Printing the number * 2: #{number * 2}" } # Output: [2, 4, 6, 8, 10]
+
+# Ampersand notation
+puts new_line
+puts "Ampersand notation"
+
+def ampersand_demo(&block)
+  block.call
+end
+
+ampersand_demo { puts "I'm the block" } # Output: I'm the block
+
+```
+
+**Blocks:** This section demonstrates the use of blocks in Ruby. A block is a piece of code that can be executed one or more times. It is defined within curly braces or do...end keywords and can be passed to methods for execution.
+
+**Procs:** Procs are saved blocks that can be reused. They are objects that can be assigned to variables and called later. Procs can take parameters and execute a series of statements when invoked.
+
+**Lambdas:** Lambdas are similar to procs, but with some slight differences in behavior. Like procs, they are saved blocks that can be reused. Lambdas are objects that can be assigned to variables and called later. They can also take parameters and execute a series of statements.
+
+**Arrow Functions:** Arrow functions are a shorthand notation for creating lambdas in Ruby. Instead of using the lambda keyword, an arrow (->) followed by parameters and a block of code is used to define a lambda.
+
+**Collect Method:** The collect method is used to create a new array based on the elements of an existing array. It iterates over the elements, applies a transformation defined in a block, and returns a new array with the transformed elements.
+
+**Ampersand Notation:** The ampersand (&) notation is used to convert a block into a proc object. It allows passing blocks as arguments to methods that expect a proc or lambda parameter.
+
 ## Case Expression [3_Control/Case_expression.rb](3_Control/Case_expression.rb)
 
 ```ruby
