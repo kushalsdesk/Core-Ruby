@@ -705,7 +705,17 @@ In this section, we explore different looping techniques in Ruby.
 for index in 0..5
     puts "Number: #{index}"
 end
+
+# In Ruby, a range using two dots (..) includes the last value specified in the range, while a range using three dots (...) excludes the last value.
+
+for index in 1...10
+  puts "Number: #{index}"
+end
+
+
+
 ```
+
 
 #### 2. Using `times` loop
 
