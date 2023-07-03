@@ -776,7 +776,33 @@ while index <= 5
     puts "Index: #{index}"
     index += 1
 end
+=begin
+    In Ruby, the until keyword is used to create a loop that executes a block of code repeatedly until a certain condition becomes true.
+    It is the opposite of the while loop, which executes the block of code while a condition is true.
+=end
+
+
+counter = 1
+until counter > 10
+  puts counter
+  # Add code to update 'counter' here!
+  counter += 1
+end
+
 ```
+
+  1. While Loop:
+        We start by initializing a variable index with a value of 1.
+        The loop condition index <= 5 is checked before each iteration.
+        If the condition is true, the code block inside the loop is executed, which prints the value of index and increments it by 1.
+        This process continues until the condition becomes false (i.e., index becomes greater than 5).
+
+  2.Until Loop:
+        We start by initializing a variable counter with a value of 1.
+        The loop condition counter > 10 is checked before each iteration.
+        If the condition is false, the code block inside the loop is executed, which prints the value of counter and increments it by 1.
+        This process continues until the condition becomes true (i.e., counter becomes greater than 10).
+        Essentially, the loop will keep executing until the condition is met, unlike the while loop, which executes as long as the condition is true.
 
 # Game Library System
 
