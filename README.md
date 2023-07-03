@@ -791,13 +791,13 @@ end
 
 ```
 
-  1. While Loop:
+   1. While Loop:
         We start by initializing a variable index with a value of 1.
         The loop condition index <= 5 is checked before each iteration.
         If the condition is true, the code block inside the loop is executed, which prints the value of index and increments it by 1.
         This process continues until the condition becomes false (i.e., index becomes greater than 5).
 
-  2.Until Loop:
+   2. Until Loop:
         We start by initializing a variable counter with a value of 1.
         The loop condition counter > 10 is checked before each iteration.
         If the condition is false, the code block inside the loop is executed, which prints the value of counter and increments it by 1.
