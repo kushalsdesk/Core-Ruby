@@ -210,6 +210,11 @@ end
 puts cube(3)
 puts cube(4)[2]
 
+# Method Chaining
+
+name = "Kushal".downcase.reverse.upcase
+puts name
+
 ```
 
 1. **`sayHi` Method**: This method is defined without any parameters. It simply prints the string "Hi! to All" to the console.
@@ -218,9 +223,10 @@ puts cube(4)[2]
 
 3. **`sayHelloCustom` Method**: This method demonstrates the use of default parameter values. It takes two parameters, `name` and `age`, with default values of "Noone" and 0 respectively. If no arguments are provided when calling this method, it will use the default values. It prints a message that includes the provided `name` and `age` values using string interpolation.
 
-4. **`cube` Method**: This method takes one parameter `num` and calculates the cube of the given number. It uses the `return` keyword to return multiple values: the cube of `num`, the number 70, and the number 90. When calling this method, you can capture and use the returned values.
+4. **`cube` Method**: This method takes one parameter `num` and calculates the cube of the given number. It uses the `return` keyword to return multiple values: the cube of `num`, the number 70, and the number       90 When calling this method, you can capture and use the returned values.
 
 5. The `puts` statements demonstrate the usage of the methods. They call the methods with different arguments and display the returned values or execute the method's code.
+6. Method chaining is a technique where multiple method calls are chained together in a single line of code, with each method operating on the result of the previous method. In your example, the `downcase` method is called on the string "Kushal" to convert it to lowercase, then the `reverse` method is called to reverse the string, and finally, the `upcase` method is called to convert the reversed string to uppercase. The result is a string with the reversed uppercase version of the original name.
 
 ## Blocks,Procs,Lambdas [2_Blocks,Procs,Lambdas/B_P_L.rb](2_Blocks,Procs,Lambdas/B_P_L.rb)
 
