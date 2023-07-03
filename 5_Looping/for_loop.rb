@@ -1,8 +1,16 @@
+## For loop is needed when the looping time is known
+
 # Looping through number
 # 1
 
+## with `..` where it declares the range 
 for index in 0..5
     puts "Number: #{index}"
+end
+
+## with `...` where it just excludes the last value
+for num in 1...10
+  puts num
 end
 
 # 2
