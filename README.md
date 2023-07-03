@@ -449,6 +449,17 @@ An example might be
 
 puts 3 < 4 ? "3 is less than 4!" : "3 is not less than 4."
 
+# unless statment
+
+hungry = false
+
+unless hungry
+  puts "I'm writing Ruby programs!"
+else
+  puts "Time to eat!"
+end
+
+
 ```
 
 The code snippet provided demonstrates the use of conditional statements in Ruby.
@@ -460,6 +471,8 @@ The second block of code uses an `if` statement with multiple conditions. It che
 The third block of code demonstrates a simpler form of the `if` statement when the block of code to execute is short. It uses the syntax `expression if boolean`. In this case, it prints "It's true!" if the boolean expression `true`.
 
 The final block of code showcases the ternary conditional expression, which is a concise way to write an `if/else` statement. It has the form `boolean ? Do this if true : Do this if false`. In the given example, it checks if `3` is less than `4`. If it is, it prints "3 is less than 4!" Otherwise, it prints "3 is not less than 4."
+
+Sometimes you want to use control flow to check if something is false, rather than if it’s true. You could reverse your `if/else`, but Ruby will do you one better: it will let you use an `unless` statement.
 
 ## Array [4_Data_Structures/Array.rb](4_Data_Structures/Array.rb)
 
