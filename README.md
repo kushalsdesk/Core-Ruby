@@ -791,19 +791,22 @@ end
 
 ```
 
-   1. While Loop:
-        We start by initializing a variable index with a value of 1.
-        The loop condition index <= 5 is checked before each iteration.
-        If the condition is true, the code block inside the loop is executed, which prints the value of index and increments it by 1.
-        This process continues until the condition becomes false (i.e., index becomes greater than 5).
+  
 
-   2. Until Loop:
-        We start by initializing a variable counter with a value of 1.
-        The loop condition counter > 10 is checked before each iteration.
-        If the condition is false, the code block inside the loop is executed, which prints the value of counter and increments it by 1.
-        This process continues until the condition becomes true (i.e., counter becomes greater than 10).
-        Essentially, the loop will keep executing until the condition is met, unlike the while loop, which executes as long as the condition is true.
+1. **While Loop**:
+   - We start by initializing a variable `index` with a value of 1.
+   - The loop condition `index <= 5` is checked before each iteration.
+   - If the condition is true, the code block inside the loop is executed, which prints the value of `index` and increments it by 1.
+   - This process continues until the condition becomes false (i.e., `index` becomes greater than 5).
 
+2. **Until Loop**:
+   - We start by initializing a variable `counter` with a value of 1.
+   - The loop condition `counter > 10` is checked before each iteration.
+   - If the condition is false, the code block inside the loop is executed, which prints the value of `counter` and increments it by 1.
+   - This process continues until the condition becomes true (i.e., `counter` becomes greater than 10).
+   - Essentially, the loop will keep executing until the condition is met, unlike the while loop, which executes as long as the condition is true.
+
+  The purpose of both loops is to repeat a certain block of code until a specific condition is met. The choice between a while loop and an until loop depends on the preferred condition you want to use: while      executes the loop while a condition is true, while until executes the loop until a condition becomes true.
 # Game Library System
 
 Welcome to the Game Collections System! This system allows you to manage your game library. Let's explore how it works.
