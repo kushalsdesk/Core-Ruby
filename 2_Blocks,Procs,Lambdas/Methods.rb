@@ -31,3 +31,10 @@ puts cube(3)  #Passing and calling
 
 #can also get specific output from the return 
 puts cube(4)[2]
+
+
+# Method  Chaining
+
+name = "Kushal".downcase.reverse.upcase
+
+puts name
