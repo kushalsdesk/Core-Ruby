@@ -10,7 +10,7 @@ while index <= 5
 end
 
 =begin
-    In Ruby, the until keyword is used to create a loop that executes a block of code repeatedly until a certain condition becomes true. 
+    In Ruby, the until keyword is used to create a loop that executes a block of code repeatedly until a certain condition becomes true.
     It is the opposite of the while loop, which executes the block of code while a condition is true.
 =end
 

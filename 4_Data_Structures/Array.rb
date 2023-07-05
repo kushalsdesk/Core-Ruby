@@ -13,7 +13,7 @@ puts ("nums is: #{nums}")
 puts ("The Length of the Nums is: #{nums.length}")
 
 
-nums2 = nums.sort() 
+nums2 = nums.sort()
 puts ("nums2 is :#{nums2}")
 
 
@@ -21,15 +21,27 @@ nums2.pop()  #pop will delete the last element
 puts ("The modified nums2: #{nums2}")
 
 array = [nums2.reverse()] #reverse the array and will do a nested array
-puts("The Original array: #{array}") 
+puts("The Original array: #{array}")
 
 array.push(nums.reverse(),11,14);
-puts("The nested array: #{array}") 
+puts("The nested array: #{array}")
 
 array.flatten!  #flatten the array, nested arrays will one-dimensional
 
-puts("The flattened array: #{array}") 
+
+puts("The flattened array: #{array}")
 puts ("#{array.include?(3)}")
 
 
+# Looping through array
+friends = Array["karen", "dev", "loius", "lara"]
+
+#1
+for friend in friends
+    puts friend
+end
+#2
+friends.each do |friend|
+    puts "Friend: #{friend}"
+end
 

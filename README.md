@@ -100,27 +100,38 @@ negative = -7
 floorFloat = 22.4
 ceilFloat = 22.7
 
-# Older way
+# Arithmatic Operation
 
-puts ("My code is " + sum.to_s)
+print 1+3
+# Addition: output 4
 
-puts ("My code is #{sum}") # Here it prints, no need to typecast the number to string
+print 1-2
+# Subtraction: output -1
 
-puts negative.abs() # Absolute value
+print 9/3
+# Division: output 3
+
+print 2*3
+# Multiplication: output 6
+
+print 2**3
+# Exponentiation: output 8
+
+print 16%9
+# Modulo: output 7
+
+
+
+#older way
+puts ("My code is "+ sum.to_s)
+
+puts("My code is #{sum}")  #Here it prints , no need to typecast the number to string
+
+puts negative.abs();#absolute value
 puts ("Ceiling value #{ceilFloat.ceil()}")
 puts ("Floor value #{floorFloat.floor()}")
 puts ("Round value #{ceilFloat.round()}")
-```
 
-Output:
-
-```
-My code is 20
-My code is 20
-7
-Ceiling value 23
-Floor value 22
-Round value 23
 ```
 
 The code snippet above demonstrates various mathematical operations and number manipulation in Ruby.
@@ -128,28 +139,26 @@ The code snippet above demonstrates various mathematical operations and number m
 ### Strings [1_Introduction/strings.rb](1_Introduction/strings.rb)
 
 ```ruby
-phrase = "Acrogueone"  # string
+phrase = "Acrogueone"  #string
 
-# Applying methods to the variable
-puts phrase.upcase() # to uppercase
-puts phrase.downcase() # to lowercase
-puts phrase.index("r") # index of a specific letter
+#now we can apply methods to the variabel
+puts phrase.upcase() #to uppercase
+puts phrase.downcase() #to lowercase
+puts phrase.index("r") #index of a specific letter
 
-# Targeting a letter with the index
+#we can also target the letter with the index
 puts phrase[3].upcase()
 
-# Fun
-puts phrase[phrase.index("r")] # It will return the same value
-```
+#fun
+puts phrase[phrase.index("r")]  #huh! it will return the same value.....not funny i guess
 
-Output:
+#String Interpolation
+age = 30
 
-```
-ACROGUEONE
-acrogueone
-4
-O
-r
+print "Hi, my name is Cody, and I am #{age} years old"
+# "Hi, my name is Cody, and I am 30 years old"
+
+
 ```
 
 The code snippet above demonstrates different string operations such as converting the string to uppercase and lowercase, finding the index of a specific letter, and targeting a letter using the index.
@@ -182,38 +191,592 @@ flows = nil  # null (absence of value)
 
 The code snippet above demonstrates the usage of variables in Ruby. It assigns values to different variables representing a character's name, age, GPA, gender, and a null value. The `puts` statement displays a greeting message using the assigned variables.
 
-## Methods [2_Blocks,Procs,Lambdas/Methods.rb](2_Blocks,Procs,Lambdas/Methods.rb)
+## Case Expression [2_Control/Case_expression.rb](2_Control/Case_expression.rb)
 
 ```ruby
-def sayHi
-    puts "Hi! to All"
+def get_day_name(day)
+    day_name = ""
+    case day
+    when "mon"
+        day_name = "Monday"
+    when "tue"
+        day_name = "Tuesday"
+    when "wed"
+        day_name = "Wednesday"
+    when "thu"
+        day_name = "Thursday"
+    when "fri"
+        day_name = "Friday"
+    when "sat"
+        day_name = "Saturday"
+    when "sun"
+        day_name = "Sunday"
+    end
+
+    return day_name
 end
 
-def sayHello(name)
+puts get_day_name("mon")
+puts get_day_name("thu")
+def get_day_name (day)
+    day_name = ""
+    case day
+    when "mon"
+        day_name= "Monday"
+    when "tue"
+        day_name = "Tuesday"
+    when "wed"
+        day_name = "Wednesday"
+    when "thu"
+        day_name = "Thursday"
+    when "fri"
+        day_name = "Friday"
+    when "sat"
+        day_name = "Saturday"
+    when "sun"
+        day_name = "Sunday"
+
+    end
+
+    return day_name
+
+end
+
+puts get_day_name("mon")
+puts get_day_name("thu")
+
+
+# when/then syntax
+
+case language
+  when "JS" then puts "Websites!"
+  when "Python" then puts "Science!"
+  when "Ruby" then puts "Web apps!"
+  else puts "I don't know!"
+end
+
+```
+
+The code snippet provided demonstrates the use of a `case` statement in Ruby to determine the corresponding day name based on a given abbreviation.
+
+The `get_day_name` method takes a parameter `day` representing the abbreviation of a day (e.g., "mon" for Monday) and returns the full name of the day (e.g., "Monday").
+
+Inside the method, a `case` statement is used to evaluate the value of `day`. Depending on the value, the corresponding `when` clause is executed. For example, if `day` is "mon", the code under the `when "mon"` line will be executed, and the `day_name` variable will be set to "Monday". Similarly, for other abbreviations, the code under the corresponding `when` clause will set `day_name` to the appropriate day of the week.
+
+Finally, the method returns the value of `day_name`, which is then printed using `puts` statements.
+
+The second code snippet demonstrates a different use of the `case` statement, where the code execution happens directly after the `when` clause using the `then` keyword. It's a more concise way of writing the `case` statement when there's a single action to be performed for each case. In this case, it prints different messages based on the value of the `language` variable. If `language` is "JS", it prints "Websites!", if it's "Python", it prints "Science!", if it's "Ruby", it prints "Web apps!", and if none of those conditions match, it prints "I don't know!".
+
+## If-Else [2_Control/If_statement.rb](2_Control/If_statement.rb)
+
+```ruby
+isMale = true
+
+if isMale
+    puts "You are a male"
+else
+    puts "You are not a male"
+end
+
+isTall = false
+
+if isMale && isTall    # && and operator
+    puts "You are a male and tall"
+
+elsif isMale || !isTall  # or operator
+    puts "You are a male and short"
+else
+    puts "You are neither a male nor tall"
+end
+
+
+# Unless
+hungry = false
+
+unless hungry
+  puts "I'm writing Ruby programs!"
+else
+  puts "Time to eat!"
+end
+
+print "Enter a number"
+number = gets.chomp.to_i
+unless number >= 10
+  puts "number is less than 10."
+end
+
+# Comparison operator
+
+a = 1;
+b = 2;
+c = 2;
+
+puts a > b;
+puts a < b;
+puts b >= c;
+puts a <= c;
+puts b == c;
+
+
+
+```
+
+The given code demonstrates various control flow statements and comparison operators in Ruby. Here's an explanation of each part:
+
+1. The variable `isMale` is assigned a boolean value of `true`.
+
+2. An `if` statement is used to check the value of `isMale`. If it evaluates to `true`, the message "You are a male" is printed; otherwise, "You are not a male" is printed.
+
+3. The variable `isTall` is assigned a boolean value of `false`.
+
+4. Another `if` statement is used to check multiple conditions using the logical `&&` (and) operator:
+
+   - If both `isMale` and `isTall` are `true`, the message "You are a male and tall" is printed.
+   - If `isMale` is `true` and `isTall` is `false`, the message "You are a male and short" is printed.
+   - If neither condition is met, the message "You are neither a male nor tall" is printed.
+
+5. The `unless` statement is the opposite of `if`. If the condition after `unless` evaluates to `false`, the corresponding block of code is executed; otherwise, the `else` block is executed. In the first `unless` statement, since `hungry` is `false`, the message "I'm writing Ruby programs!" is printed.
+
+6. The `gets.chomp.to_i` line prompts the user to enter a number and converts the input to an integer.
+
+7. Another `unless` statement is used to check if the number entered is less than 10. If it is, the message "number is less than 10" is printed.
+
+8. The code demonstrates various comparison operators (`>`, `<`, `>=`, `<=`, `==`) by comparing the values of variables `a`, `b`, and `c`. The result of each comparison is printed to the console.
+
+## Looping
+
+### `for` loop [3_Looping/for_loop.rb](3_Looping/for_loop.rb)
+
+```ruby
+  ## For loop is needed when the looping time is known
+
+# Looping through number
+# 1
+
+## with `..` where it declares the range
+# Inclusive range
+for index in 0..5
+    puts "Number: #{index}"
+end
+
+## with `...` where it just excludes the last value
+# Exclusive range
+for num in 1...10
+  puts num
+end
+
+# 2
+
+5.times do | index |
+    puts "Number: #{index}"
+end
+
+
+# each method
+
+data = [3, 6, 9, 12]
+
+data.each do |num|
+  puts "The number is: #{num}"
+end
+
+# Inclusive range
+
+(3..5).each do |i|
+  puts i
+end
+
+# Exclusive range
+(3...5).each do |i|
+  puts i
+end
+
+
+# next method
+for i in 1..10
+  next if i % 2 == 0
+  puts i
+end
+
+# loop method
+
+num = 1
+loop do
+  puts "We are in the loop!"
+  num += 1
+  break if num > 3
+end
+
+puts "We have exited the loop!"
+
+```
+
+1. `for` loops:
+
+   - The first example shows a `for` loop using an inclusive range (`0..5`) to iterate over the values from 0 to 5. The loop prints each value.
+   - The second example uses an exclusive range (`1...10`) to iterate over the values from 1 to 9, excluding 10.
+
+2. The `times` method:
+
+   - The `times` method is called on a number (in this case, 5) and takes a block with an index variable. It executes the block the specified number of times, with the index starting from 0. The loop prints the value of the index.
+
+3. The `each` method:
+
+   - The `each` method is called on an array (`data`) and takes a block with a variable (`num`). It iterates over each element in the array and executes the block for each element. The loop prints each element of the array.
+
+4. Ranges with `each` method:
+
+   - Two examples demonstrate the use of the `each` method with ranges. The first uses an inclusive range (`3..5`), and the second uses an exclusive range (`3...5`). Both loops print the values within the respective ranges.
+
+5. The `next` keyword:
+
+   - The `next` keyword is used to skip the rest of the current iteration and move to the next iteration in the loop. In this example, the loop iterates from 1 to 10, but only odd numbers are printed because the `next` keyword is used when the number is even.
+
+6. The `loop` method:
+   - The `loop` method creates an infinite loop that continues executing until a `break` condition is met. In this example, the loop prints "We are in the loop!" and increments the `num` variable. It breaks out of the loop when `num` becomes greater than 3. The message "We have exited the loop!" is printed after the loop exits.
+
+### `while` loop [3_Looping/while_loop.rb](3_Looping/while_loop.rb)
+
+```ruby
+  # While loop is a simple Entry Control Loop
+# We need while loop where the looping time is unknown
+
+
+index = 1
+
+while index <= 5
+    puts "index: #{index}"
+    index += 1
+end
+
+=begin
+    In Ruby, the until keyword is used to create a loop that executes a block of code repeatedly until a certain condition becomes true.
+    It is the opposite of the while loop, which executes the block of code while a condition is true.
+=end
+
+
+counter = 1
+until counter > 10
+  puts counter
+  # Add code to update 'counter' here!
+  counter += 1
+end
+
+```
+
+1. `while` loop:
+
+   - The `while` loop is an entry control loop that executes a block of code as long as a certain condition remains true.
+   - In the example, the loop runs as long as the `index` variable is less than or equal to 5. The loop prints the current value of `index` and increments it by 1 on each iteration.
+
+2. `until` loop:
+   - The `until` loop is the opposite of the `while` loop. It executes a block of code repeatedly until a certain condition becomes true.
+   - In the example, the loop runs until the `counter` variable becomes greater than 10. The loop prints the current value of `counter` and increments it by 1 on each iteration.
+
+Both loops are entry control loops, meaning that the condition is checked before entering the loop. If the condition is initially false, the loop is never executed. The looping time in these cases is determined by the condition becoming false (for `while` loop) or true (for `until` loop).
+
+## Array [4_Data_Structures/Array.rb](4_Data_Structures/Array.rb)
+
+```ruby
+games = Array["Forza", "NFS", 100]  #can store any type of data
+
+puts "#{games}"
+
+puts "#{games[0]}"  # accessing an element by index
+
+# Creating a new empty array
+nums = Array.new
+
+# Adding elements to the array using the .push() method
+nums.push(7, 6, 8, 5, 2, 3, 4)
+puts "nums is: #{nums}"
+puts "The length of nums is: #{nums.length}"
+
+# Sorting the array using the .sort() method
+nums2 = nums.sort()
+puts "nums2 is: #{nums2}"
+
+# Removing the last element from the array using the .pop() method
+nums2.pop()
+puts "The modified nums2: #{nums2}"
+
+# Creating a nested array
+array = [nums2.reverse()]
+
+# Adding elements to the nested array
+array.push(nums.reverse(), 11, 14)
+puts "The nested array: #{array}"
+
+# Flattening the array using the .flatten! method
+array.flatten!
+puts "The flattened array: #{array}"
+
+# Checking if an element exists in the array using the .include?() method
+puts "#{array.include?(3)}"
+# Looping through array
+friends = Array["karen", "dev", "loius", "lara"]
+
+#1
+  for friend in friends
+      puts friend
+  end
+  #2
+  friends.each do |friend|
+      puts "Friend: #{friend}"
+  end
+```
+
+1. **Creating and Accessing an Array:**
+
+   - An array named `games` is created with three elements: "Forza", "NFS", and 100.
+   - The contents of the `games` array are printed.
+   - The first element of the `games` array is accessed using index 0 and printed.
+
+2. **Adding Elements to an Array:**
+
+   - An empty array named `nums` is created using the `Array.new` constructor.
+   - Elements (7, 6, 8, 5, 2, 3, 4) are added to the `nums` array using the `push` method.
+   - The contents of the `nums` array and its length are printed.
+
+3. **Sorting and Modifying Arrays:**
+
+   - The `nums` array is sorted using the `sort` method and stored in a new array named `nums2`.
+   - The last element is removed from the `nums2` array using the `pop` method.
+   - The modified `nums2` array is printed.
+
+4. **Creating a Nested Array:**
+
+   - A nested array named `array` is created with `nums2.reverse()` as its first element.
+   - Additional elements, including another reversed `nums` array and two integers (11, 14), are added to the `array`.
+
+5. **Flattening an Array:**
+
+   - The `array` is flattened using the `flatten!` method, which modifies the array in-place.
+   - The flattened `array` is printed.
+
+   - `!` bang operator , When applying methods to any object the method dont modify the original, creats a new one, where with operator it permanently modifies the original
+
+6. **Checking for Element Existence:**
+   - The `include?` method is used to check if the value 3 exists in the `array`.
+   - The result of the check is printed.
+
+These operations showcase common array manipulations, such as creating and accessing arrays, adding elements, sorting, modifying arrays, creating nested arrays, flattening arrays, and checking for element existence.
+
+## Hash [4_Data_Structures/Hash.rb](4_Data_Structures/Hash.rb)
+
+```ruby
+=begin
+    Hashes let us store data in a key-value pair
+    Though everyhting in Ruby is an object
+    We have multiple syntaxes to set the key
+=end
+
+my_hash = Hash.new
+
+my_hash = {
+    1 => "Random",
+    :game => "AC",
+    "desktop" => "Environment",
+    key: "value"
+
+}
+
+puts my_hash
+
+my_hashToArray = my_hash.to_a  # this would convert a string to n array
+
+puts "my_hashToArray"
+my_hashToArray.each do |ele|
+    puts "The Array element is: #{ele}"
+end
+puts "myhashToArray end "
+
+# Looping through hash
+
+myHash = {
+    :game => "AC",
+    :desk => "MyDesk"
+}
+
+myHash.each do |key,value|
+    puts "key: #{key} \n value: #{value}"
+end
+
+
+
+my_hashToArray.each do |key,value|
+    puts " Key: #{key}, \n Value: #{value}"
+end
+
+
+
+=begin
+    it was generally recommended to use
+    the "hash rocket" (=>) syntax for creating hashes.
+    But after 1.9 things start look like JS Object or Python Dictionary
+    though everything in Ruby is Object but as this hash has other functionalities , I would still practice that hash rocket to respect the community and to read old docs and codebases
+=end
+
+
+### Symbols
+=begin
+    We can certainly use strings as Ruby hash keys; as we’ve seen, there’s always more than one way to do something in Ruby. However, the Rubyist’s approach would be to use symbols.
+=end
+
+my_first_symbol = :first # this is a symbol , and its immutable
+
+# This converts a string to symbol and vice-versa
+
+:sasquatch.to_s
+# ==> "sasquatch"
+
+"sasquatch".to_sym
+# ==> :sasquatch
+
+# or
+
+"hello".intern
+# ==> :hello
+
+strings = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
+
+# Add your code below!
+
+symbols = Array.new
+
+strings.each do |ele|
+  symbols.push(ele.intern)
+end
+
+symbols.each do |ele|
+  puts ele
+end
+
+
+# Becoming more selective by passing some conditions to filter the hash result
+
+movie_ratings = {
+    memento: 3,
+    primer: 3.5,
+    the_matrix: 5,
+    truman_show: 4,
+    red_dawn: 1.5,
+    skyfall: 4,
+    alex_cross: 2,
+    uhf: 1,
+    lion_king: 3.5
+  }
+  # Add your code below!
+
+  good_movies = movie_ratings.select { |name, rating | rating > 3}
+
+ puts good_movies.select { |k,v|
+    k == :skyfall
+}
+
+
+# Just working with eiher key or value
+my_hash = { one: 1, two: 2, three: 3 }
+
+# working with keys
+my_hash.each_key { |k| print k, " " }
+# working with values
+my_hash.each_value { |v| print v, " " }
+
+
+```
+
+1. **Hashes:**
+
+   - Hashes in Ruby allow storing data in key-value pairs.
+   - An empty hash named `my_hash` is initialized using `Hash.new`.
+   - Key-value pairs are added to the `my_hash` using different syntaxes, including integers, symbols, and strings as keys, and any Ruby objects as values.
+   - The resulting hash is printed using `puts`.
+
+2. **Converting Hash to Array:**
+
+   - The `my_hash` is converted to an array using the `to_a` method.
+   - The resulting array is stored in the variable `my_hashToArray`.
+   - The array elements are printed using the `each` iteration.
+
+3. **Symbols:**
+
+   - Symbols in Ruby are immutable identifiers represented by a leading colon (`:symbol_name`).
+   - The code demonstrates different ways to convert between symbols and strings.
+   - An array of symbols is created by iterating over an array of strings and converting each element to a symbol using methods like `to_sym` or `intern`.
+
+4. **Filtering Hash:**
+
+   - The `movie_ratings` hash contains movie names as symbols and their corresponding ratings.
+   - The `select` method is used on `movie_ratings` to filter movies with ratings greater than 3, creating a new hash called `good_movies`.
+   - The `good_movies` hash is further filtered to select the movie with the key `:skyfall`, which is printed using `puts`.
+
+5. **Working with Keys and Values:**
+   - The `my_hash` contains key-value pairs.
+   - The `each_key` method is used to iterate over the keys and print them.
+   - Similarly, the `each_value` method is used to iterate over the values and print them.
+
+These operations demonstrate the usage of hashes, converting between symbols and strings, filtering hashes based on specific conditions, and iterating over keys and values in a hash.
+
+## Methods [5_Blocks,Procs,Lambdas/Methods.rb](5_Blocks,Procs,Lambdas/Methods.rb)
+
+```ruby
+# "def" for declaration, no "()" needed if no param passed
+def sayHi
+    puts "Hi! to All"
+end  # to declare function end
+
+def sayHello(name)      # "()" for params to be passed
     puts "Hello #{name}"
 end
 
-sayHi
-sayHello("Kushal")
+sayHi    # function call
+sayHello("Kushal")  # function call with param
 
-def sayHelloCustom(name="Noone", age=0)
-    puts "Hello #{name}, your age is #{age}"
+
+# passing default value to parameters if they are optional
+
+def sayHelloCustom(name="Noone", age = 0 )
+    puts ("Hello #{name}, your age is #{age}")
 end
 
 sayHelloCustom
 sayHelloCustom("Kushal", 23)
 
+
+# return statement
+
 def cube(num)
-    return num*num*num, 70, 90
+    return num*num*num, 70 , 90  # passing some numbers, may other codeblocks can be passed(!know)
 end
 
-puts cube(3)
+puts cube(3)  #Passing and calling
+
+#can also get specific output from the return
 puts cube(4)[2]
 
-# Method Chaining
+
+# Method  Chaining
 
 name = "Kushal".downcase.reverse.upcase
+
 puts name
+
+
+# Combined Comparison Operator
+
+puts "Keanu" <=> "Adrianna" # The first letters of each word are compared in ASCII order and since "K" comes after "A", 1 is printed.
+
+puts 1 <=> 2 # -1
+
+puts 3 <=> 3 # 0
+
+#<=> can also be used inside of a block and to sort values in descending order:
+my_array = [3, 0, 8, 7, 1, 6, 5, 9, 4]
+my_array.sort! { |first_num, second_num| second_num <=> first_num }
+print my_array
+#Output => [9, 8, 7, 6, 5, 4, 3, 1, 0]
+
 
 ```
 
@@ -223,12 +786,16 @@ puts name
 
 3. **`sayHelloCustom` Method**: This method demonstrates the use of default parameter values. It takes two parameters, `name` and `age`, with default values of "Noone" and 0 respectively. If no arguments are provided when calling this method, it will use the default values. It prints a message that includes the provided `name` and `age` values using string interpolation.
 
-4. **`cube` Method**: This method takes one parameter `num` and calculates the cube of the given number. It uses the `return` keyword to return multiple values: the cube of `num`, the number 70, and the number       90 When calling this method, you can capture and use the returned values.
+4. **`cube` Method**: This method takes one parameter `num` and calculates the cube of the given number. It uses the `return` keyword to return multiple values: the cube of `num`, the number 70, and the number 90 When calling this method, you can capture and use the returned values.
 
 5. The `puts` statements demonstrate the usage of the methods. They call the methods with different arguments and display the returned values or execute the method's code.
+
 6. Method chaining is a technique where multiple method calls are chained together in a single line of code, with each method operating on the result of the previous method. In your example, the `downcase` method is called on the string "Kushal" to convert it to lowercase, then the `reverse` method is called to reverse the string, and finally, the `upcase` method is called to convert the reversed string to uppercase. The result is a string with the reversed uppercase version of the original name.
 
-## Blocks,Procs,Lambdas [2_Blocks,Procs,Lambdas/B_P_L.rb](2_Blocks,Procs,Lambdas/B_P_L.rb)
+7. **Ruby Combined Comparison Operator**
+   In Ruby, the combined comparison operator, `<=>`, also known as the `spaceship operator` is used to compare two objects. It returns 0 if the first operand equals the second, 1 if the first operand is greater than the second, and -1 if the first operand is less than the second.
+
+## Blocks,Procs,Lambdas [5_Blocks,Procs,Lambdas/B_P_L.rb](5_Blocks,Procs,Lambdas/B_P_L.rb)
 
 ```ruby
 new_line = "____________________________\n"
@@ -330,483 +897,6 @@ ampersand_demo { puts "I'm the block" } # Output: I'm the block
 
 6. **Ampersand Notation:** The ampersand (&) notation is used to convert a block into a proc object. It allows passing blocks as arguments to methods that expect a proc or lambda parameter.
 
-## Case Expression [3_Control/Case_expression.rb](3_Control/Case_expression.rb)
-
-```ruby
-def get_day_name(day)
-    day_name = ""
-    case day
-    when "mon"
-        day_name = "Monday"
-    when "tue"
-        day_name = "Tuesday"
-    when "wed"
-        day_name = "Wednesday"
-    when "thu"
-        day_name = "Thursday"
-    when "fri"
-        day_name = "Friday"
-    when "sat"
-        day_name = "Saturday"
-    when "sun"
-        day_name = "Sunday"
-    end
-
-    return day_name
-end
-
-puts get_day_name("mon")
-puts get_day_name("thu")
-def get_day_name (day)
-    day_name = ""
-    case day
-    when "mon"
-        day_name= "Monday"
-    when "tue"
-        day_name = "Tuesday"
-    when "wed"
-        day_name = "Wednesday"
-    when "thu"
-        day_name = "Thursday"
-    when "fri"
-        day_name = "Friday"
-    when "sat"
-        day_name = "Saturday"
-    when "sun"
-        day_name = "Sunday"
-
-    end
-
-    return day_name
-
-end
-
-puts get_day_name("mon")
-puts get_day_name("thu")
-
-
-# when/then syntax
-
-case language
-  when "JS" then puts "Websites!"
-  when "Python" then puts "Science!"
-  when "Ruby" then puts "Web apps!"
-  else puts "I don't know!"
-end
-
-```
-
-The code snippet provided demonstrates the use of a `case` statement in Ruby to determine the corresponding day name based on a given abbreviation.
-
-The `get_day_name` method takes a parameter `day` representing the abbreviation of a day (e.g., "mon" for Monday) and returns the full name of the day (e.g., "Monday").
-
-Inside the method, a `case` statement is used to evaluate the value of `day`. Depending on the value, the corresponding `when` clause is executed. For example, if `day` is "mon", the code under the `when "mon"` line will be executed, and the `day_name` variable will be set to "Monday". Similarly, for other abbreviations, the code under the corresponding `when` clause will set `day_name` to the appropriate day of the week.
-
-Finally, the method returns the value of `day_name`, which is then printed using `puts` statements.
-
-The second code snippet demonstrates a different use of the `case` statement, where the code execution happens directly after the `when` clause using the `then` keyword. It's a more concise way of writing the `case` statement when there's a single action to be performed for each case. In this case, it prints different messages based on the value of the `language` variable. If `language` is "JS", it prints "Websites!", if it's "Python", it prints "Science!", if it's "Ruby", it prints "Web apps!", and if none of those conditions match, it prints "I don't know!".
-
-## If-Else [3_Control/If_statement.rb](3_Control/If_statement.rb)
-
-```ruby
-isMale = true
-
-if isMale
-    puts "You are a male"
-else
-    puts "You are not a male"
-end
-
-isTall = false
-
-if isMale and isTall
-    puts "You are a male and tall"
-
-elsif isMale and !isTall
-    puts "You are a male and short"
-else
-    puts "You are neither a male nor tall"
-end
-
-
-# simpler if statement
-# if the block-statement is short
-
-# expression if boolean
-
-
-puts "Its true!" if true
-
-=begin
-An even more concise version of if/else is the ternary conditional expression. It’s called “ternary” because it takes three arguments: a boolean, an expression to evaluate if the boolean is true, and an expression to evaluate if the boolean is false.
-
-The syntax looks like this:
-
-boolean ? Do this if true: Do this if false
-
-An example might be
-=end
-
-puts 3 < 4 ? "3 is less than 4!" : "3 is not less than 4."
-
-# unless statment
-
-hungry = false
-
-unless hungry
-  puts "I'm writing Ruby programs!"
-else
-  puts "Time to eat!"
-end
-
-
-```
-
-The code snippet provided demonstrates the use of conditional statements in Ruby.
-
-The first block of code uses an `if` statement to check the value of the `isMale` variable. If `isMale` is `true`, it prints "You are a male." Otherwise, it prints "You are not a male."
-
-The second block of code uses an `if` statement with multiple conditions. It checks the values of `isMale` and `isTall`. If both conditions are `true`, it prints "You are a male and tall." If `isMale` is `true` but `isTall` is `false`, it prints "You are a male and short." If none of the conditions match, it prints "You are neither a male nor tall."
-
-The third block of code demonstrates a simpler form of the `if` statement when the block of code to execute is short. It uses the syntax `expression if boolean`. In this case, it prints "It's true!" if the boolean expression `true`.
-
-The final block of code showcases the ternary conditional expression, which is a concise way to write an `if/else` statement. It has the form `boolean ? Do this if true : Do this if false`. In the given example, it checks if `3` is less than `4`. If it is, it prints "3 is less than 4!" Otherwise, it prints "3 is not less than 4."
-
-Sometimes you want to use control flow to check if something is false, rather than if it’s true. You could reverse your `if/else`, but Ruby will do you one better: it will let you use an `unless` statement.
-
-## Array [4_Data_Structures/Array.rb](4_Data_Structures/Array.rb)
-
-```ruby
-games = Array["Forza", "NFS", 100]  #can store any type of data
-
-puts "#{games}"
-
-puts "#{games[0]}"  # accessing an element by index
-
-# Creating a new empty array
-nums = Array.new
-
-# Adding elements to the array using the .push() method
-nums.push(7, 6, 8, 5, 2, 3, 4)
-puts "nums is: #{nums}"
-puts "The length of nums is: #{nums.length}"
-
-# Sorting the array using the .sort() method
-nums2 = nums.sort()
-puts "nums2 is: #{nums2}"
-
-# Removing the last element from the array using the .pop() method
-nums2.pop()
-puts "The modified nums2: #{nums2}"
-
-# Creating a nested array
-array = [nums2.reverse()]
-
-# Adding elements to the nested array
-array.push(nums.reverse(), 11, 14)
-puts "The nested array: #{array}"
-
-# Flattening the array using the .flatten! method
-array.flatten!
-puts "The flattened array: #{array}"
-
-# Checking if an element exists in the array using the .include?() method
-puts "#{array.include?(3)}"
-```
-
-1. **Creating and Accessing an Array:**
-
-   - An array named `games` is created with three elements: "Forza", "NFS", and 100.
-   - The contents of the `games` array are printed.
-   - The first element of the `games` array is accessed using index 0 and printed.
-
-2. **Adding Elements to an Array:**
-
-   - An empty array named `nums` is created using the `Array.new` constructor.
-   - Elements (7, 6, 8, 5, 2, 3, 4) are added to the `nums` array using the `push` method.
-   - The contents of the `nums` array and its length are printed.
-
-3. **Sorting and Modifying Arrays:**
-
-   - The `nums` array is sorted using the `sort` method and stored in a new array named `nums2`.
-   - The last element is removed from the `nums2` array using the `pop` method.
-   - The modified `nums2` array is printed.
-
-4. **Creating a Nested Array:**
-
-   - A nested array named `array` is created with `nums2.reverse()` as its first element.
-   - Additional elements, including another reversed `nums` array and two integers (11, 14), are added to the `array`.
-
-5. **Flattening an Array:**
-
-   - The `array` is flattened using the `flatten!` method, which modifies the array in-place.
-   - The flattened `array` is printed.
-
-6. **Checking for Element Existence:**
-   - The `include?` method is used to check if the value 3 exists in the `array`.
-   - The result of the check is printed.
-
-These operations showcase common array manipulations, such as creating and accessing arrays, adding elements, sorting, modifying arrays, creating nested arrays, flattening arrays, and checking for element existence.
-
-## Hash [4_Data_Structures/Hash.rb](4_Data_Structures/Hash.rb)
-
-```ruby
-=begin
-    Hashes let us store data in a key-value pair
-    Though everyhting in Ruby is an object
-    We have multiple syntaxes to set the key
-=end
-
-my_hash = Hash.new
-
-my_hash = {
-    1 => "Random",
-    :game => "AC",
-    "desktop" => "Environment",
-    key: "value"
-
-}
-
-puts my_hash
-
-my_hashToArray = my_hash.to_a  # this would convert a string to n array
-
-puts "my_hashToArray"
-my_hashToArray.each do |ele|
-    puts "The Array element is: #{ele}"
-end
-puts "myhashToArray end "
-
-my_hashToArray.each do |key,value|
-    puts " Key: #{key}, \n Value: #{value}"
-end
-
-
-
-=begin
-    it was generally recommended to use
-    the "hash rocket" (=>) syntax for creating hashes.
-    But after 1.9 things start look like JS Object or Python Dictionary
-    though everything in Ruby is Object but as this hash has other functionalities , I would still practice that hash rocket to respect the community and to read old docs and codebases
-=end
-
-
-# Symbols
-
-=begin
-    We can certainly use strings as Ruby hash keys; as we’ve seen, there’s always more than one way to do something in Ruby. However, the Rubyist’s approach would be to use symbols.
-=end
-
-my_first_symbol = :first # this is a symbol , and its immutable
-
-# This converts a string to symbol and vice-versa
-
-:sasquatch.to_s
-# ==> "sasquatch"
-
-"sasquatch".to_sym
-# ==> :sasquatch
-
-# or
-
-"hello".intern
-# ==> :hello
-
-strings = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
-
-
-symbols = Array.new
-
-strings.each do |ele|
-  symbols.push(ele.intern)
-end
-
-symbols.each do |ele|
-  puts ele
-end
-
-
-# Becoming more selective by passing some conditions to filter the hash result
-
-movie_ratings = {
-    memento: 3,
-    primer: 3.5,
-    the_matrix: 5,
-    truman_show: 4,
-    red_dawn: 1.5,
-    skyfall: 4,
-    alex_cross: 2,
-    uhf: 1,
-    lion_king: 3.5
-  }
-  # Add your code below!
-
-  good_movies = movie_ratings.select { |name, rating | rating > 3}
-
- puts good_movies.select { |k,v|
-    k == :skyfall
-}
-
-
-# Just working with eiher key or value
-my_hash = { one: 1, two: 2, three: 3 }
-
-# working with keys
-my_hash.each_key { |k| print k, " " }
-# working with values
-my_hash.each_value { |v| print v, " " }
-
-
-```
-
-1. **Hashes:**
-
-   - Hashes in Ruby allow storing data in key-value pairs.
-   - An empty hash named `my_hash` is initialized using `Hash.new`.
-   - Key-value pairs are added to the `my_hash` using different syntaxes, including integers, symbols, and strings as keys, and any Ruby objects as values.
-   - The resulting hash is printed using `puts`.
-
-2. **Converting Hash to Array:**
-
-   - The `my_hash` is converted to an array using the `to_a` method.
-   - The resulting array is stored in the variable `my_hashToArray`.
-   - The array elements are printed using the `each` iteration.
-
-3. **Symbols:**
-
-   - Symbols in Ruby are immutable identifiers represented by a leading colon (`:symbol_name`).
-   - The code demonstrates different ways to convert between symbols and strings.
-   - An array of symbols is created by iterating over an array of strings and converting each element to a symbol using methods like `to_sym` or `intern`.
-
-4. **Filtering Hash:**
-
-   - The `movie_ratings` hash contains movie names as symbols and their corresponding ratings.
-   - The `select` method is used on `movie_ratings` to filter movies with ratings greater than 3, creating a new hash called `good_movies`.
-   - The `good_movies` hash is further filtered to select the movie with the key `:skyfall`, which is printed using `puts`.
-
-5. **Working with Keys and Values:**
-   - The `my_hash` contains key-value pairs.
-   - The `each_key` method is used to iterate over the keys and print them.
-   - Similarly, the `each_value` method is used to iterate over the values and print them.
-
-These operations demonstrate the usage of hashes, converting between symbols and strings, filtering hashes based on specific conditions, and iterating over keys and values in a hash.
-
-# Looping in Ruby
-
-In this section, we explore different looping techniques in Ruby.
-
-## For [5_Looping/for_loop.rb](5_Looping/for_loop.rb)
-
-### Looping through numbers
-
-#### 1. Using `for` loop and range
-
-```ruby
-for index in 0..5
-    puts "Number: #{index}"
-end
-
-# In Ruby, a range using two dots (..) includes the last value specified in the range, while a range using three dots (...) excludes the last value.
-
-for index in 1...10
-  puts "Number: #{index}"
-end
-
-
-
-```
-
-
-#### 2. Using `times` loop
-
-```ruby
-
-5.times do |index|
-    puts "Number: #{index}"
-end
-```
-
-### Looping through an array
-
-```ruby
-friends = Array["karen", "dev", "loius", "lara"]
-```
-
-#### 1. Using `for` loop
-
-```ruby
-for friend in friends
-    puts friend
-end
-```
-
-#### 2. Using `each` loop
-
-```ruby
-friends.each do |friend|
-    puts "Friend: #{friend}"
-end
-
-```
-
-### Looping through an array
-
-```ruby
-myHash = {
-    :game => "AC",
-    :desk => "MyDesk"
-}
-
-myHash.each do |key, value|
-    puts "Key: #{key} \nValue: #{value}"
-end
-
-```
-
-The code snippets above demonstrate various looping techniques in Ruby. They showcase looping through numbers using for and times loops, looping through an array using for and each loops, and looping through a hash using each loop.
-
-## While [5_Looping/while_loop.rb](5_Looping/while_loop.rb)
-
-### Simple while loop
-
-```ruby
-index = 1
-
-while index <= 5
-    puts "Index: #{index}"
-    index += 1
-end
-=begin
-    In Ruby, the until keyword is used to create a loop that executes a block of code repeatedly until a certain condition becomes true.
-    It is the opposite of the while loop, which executes the block of code while a condition is true.
-=end
-
-
-counter = 1
-until counter > 10
-  puts counter
-  # Add code to update 'counter' here!
-  counter += 1
-end
-
-```
-
-  
-
-1. **While Loop**:
-   - We start by initializing a variable `index` with a value of 1.
-   - The loop condition `index <= 5` is checked before each iteration.
-   - If the condition is true, the code block inside the loop is executed, which prints the value of `index` and increments it by 1.
-   - This process continues until the condition becomes false (i.e., `index` becomes greater than 5).
-
-2. **Until Loop**:
-   - We start by initializing a variable `counter` with a value of 1.
-   - The loop condition `counter > 10` is checked before each iteration.
-   - If the condition is false, the code block inside the loop is executed, which prints the value of `counter` and increments it by 1.
-   - This process continues until the condition becomes true (i.e., `counter` becomes greater than 10).
-   - Essentially, the loop will keep executing until the condition is met, unlike the while loop, which executes as long as the condition is true.
-
-  The purpose of both loops is to repeat a certain block of code until a specific condition is met. The choice between a while loop and an until loop depends on the preferred condition you want to use: while      executes the loop while a condition is true, while until executes the loop until a condition becomes true.
 # Game Library System
 
 Welcome to the Game Collections System! This system allows you to manage your game library. Let's explore how it works.
