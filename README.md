@@ -1221,6 +1221,7 @@ In summary, the code demonstrates the creation of instances of the `Machine` cla
 ## Conclusion
 
 This Repo should contain the very fundamental knowledge of Ruby Programs...
+[CheatSheet](https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-introduction-to-ruby-u/cheatsheet)
 Now The next focus should be Ruby on Rails to run Ruby in Web Development
 
 Happy coding!
