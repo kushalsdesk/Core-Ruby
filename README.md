@@ -1,6 +1,6 @@
 # Learning Ruby Basics
 
-![Ruby](https://upload.wikimedia.org/wikipedia/commons/7/73/Ruby_logo.svg)
+[Ruby](https://upload.wikimedia.org/wikipedia/commons/7/73/Ruby_logo.svg)
 
 Welcome to the "Learning Ruby Basics" repository! This repository is designed to help you grasp the fundamentals of the Ruby programming language. Let's dive into the concepts covered so far.
 
