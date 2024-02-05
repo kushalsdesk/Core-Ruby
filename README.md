@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## Core Ruby: A Branching Roadmap
 [![](https://skillicons.dev/icons?i=ruby)](https://skillicons.dev)
 
@@ -118,7 +117,6 @@
 - Web frameworks  
     * ❤️Rails 
     * Sinatra
-* Building web applications with Ruby
 
 **🔭GUI Development:**
 
@@ -128,9 +126,5 @@
 **🔭Network Programming:**
 
 * Using sockets and HTTP libraries for network-based applications
-=======
-# Learning Ruby Basics
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Ruby_logo.svg" alt="Ruby_logo" >
->>>>>>> 9883845d82ff2fe73bc24923df7094e87a1abb93
 
 Remember, this is just a guide. Explore topics in any order that suits you, revisit earlier sections as needed, and adapt the roadmap to your learning goals.
